@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WedInOneClick | Noah & Olivia</title>
+    <link rel="icon" href="folder/site-icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="container">
+    <div class="curtain1" id="curtain1">
+            <div class="demiCercle1"></div>
+    </div>
+    <div class="curtain2" id="curtain2">
+
+    </div>
+    <img src="folder/flowers.png" alt="" class="clé">
+    <button id="openCard" onclick="document.getElementById('carte').scrollIntoView({ behavior: 'smooth' });">Open the Card</button>
+</div>
+<div id="carte" class="carte">
+    <div class="information">
+        <div class="date">
+            <span class="text1">Saturday </span>
+            <div class="verticalDate">
+                <span class="text2">07</span>
+                <span class="text3">September</span>
+            </div>
+            <span class="text1">8:00 PM</span>
+        </div>
+        <div class="center2">
+        <h2 class="text4">📍 La Villa Lumière, Lyon </h2>
+        <p class="text5">A magical evening awaits you — and it wouldn’t be the same without you.</p>
+        <button class="nexto" onclick="document.getElementById('reponse').scrollIntoView({ behavior: 'smooth' });">Please Respond</button>
+        </div>
+    </div>
+    
+</div>
+<div class="reponse" id="reponse">
+    <div class="background"></div>
+    <div class="lastContenu">
+        <div class="center">
+        <h1 id="coming">Are you coming?</h1>
+        <h2>Let us know if you’ll be joining the celebration.</h2>
+        </div>
+        <form name="rsvp" method="POST" data-netlify="true" action="/thank-you.html">
+            <input type="hidden" name="form-name" value="rsvp">
+            <input type="text" required placeholder="Please enter your name: " id="name">
+            
+           <div class="chose">
+               <input type="radio" class="radio" name="attendance" value="Yes" required> <span>Yes, I’m coming!</span>
+           </div>  
+            <div class="chose">
+                <input type="radio" class="radio" name="attendance" value="No" required> <span>Sorry, I can’t make it.</span>
+            </div>
+            <input type="submit" class="submit">
+        </form>
+    </div>
+</div>
+
+
+
+
+
+<script src="main.js"></script>
+</body>
+</html>
