@@ -44,18 +44,24 @@
         <h1 id="coming">Are you coming?</h1>
         <h2>Let us know if you’ll be joining the celebration.</h2>
         </div>
-        <form action="https://formspree.io/f/xwpnkagb" method="POST"  >
-            <input type="hidden" name="_redirect" value="https://hamzabodis.github.io/newcarte/thank-you.html">
-            <input type="text" required placeholder="Please enter your name: " id="name">
-            
-           <div class="chose">
-               <input type="radio" class="radio" name="attendance" value="Yes" required> <span>Yes, I’m coming!</span>
-           </div>  
-            <div class="chose">
-                <input type="radio" class="radio" name="attendance" value="No" required> <span>Sorry, I can’t make it.</span>
-            </div>
-            <input type="submit" class="submit">
-        </form>
+<form action="https://formspree.io/f/xwpnkagb" method="POST">
+  <input type="hidden" name="_next" value="https://hamzabodis.github.io/newcarte/thank-you.html">
+
+  <input type="text" required placeholder="Please enter your name: " name="name">
+
+  <div class="chose">
+    <input type="radio" class="radio" name="attendance" value="Yes" required>
+    <span>Yes, I’m coming!</span>
+  </div>
+
+  <div class="chose">
+    <input type="radio" class="radio" name="attendance" value="No" required>
+    <span>Sorry, I can’t make it.</span>
+  </div>
+
+  <input type="submit" class="submit">
+</form>
+
     </div>
 </div>
 
@@ -67,4 +73,5 @@
 </body>
 
 </html>
+
 
