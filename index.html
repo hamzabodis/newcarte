@@ -44,23 +44,50 @@
         <h1 id="coming">Are you coming?</h1>
         <h2>Let us know if you’ll be joining the celebration.</h2>
         </div>
-<form action="https://formspree.io/f/xwpnkagb" method="POST">
-  <input type="hidden" name="_next" value="https://hamzabodis.github.io/newcarte/thank-you.html">
 
-  <input type="text" required placeholder="Please enter your name: " name="name">
+  <form id="rsvp-form">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required />
 
-  <div class="chose">
-    <input type="radio" class="radio" name="attendance" value="Yes" required>
-    <span>Yes, I’m coming!</span>
-  </div>
+    <div class="radio-group">
+      <label>
+        <input type="radio" name="attendance" value="Yes" required />
+        Yes, I’m coming!
+      </label>
+      <label>
+        <input type="radio" name="attendance" value="No" required />
+        Sorry, I can’t make it.
+      </label>
+    </div>
 
-  <div class="chose">
-    <input type="radio" class="radio" name="attendance" value="No" required>
-    <span>Sorry, I can’t make it.</span>
-  </div>
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
 
-  <input type="submit" class="submit">
-</form>
+  <script>
+    const form = document.getElementById('rsvp-form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch('https://formspree.io/f/xwpnkagb', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: formData
+        });
+
+        if (response.ok) {
+          // Redirect manually on success:
+          window.location.href = 'https://hamzabodis.github.io/newcarte/thank-you.html';
+        } else {
+          alert('Oops! There was a problem submitting your form.');
+        }
+      } catch (error) {
+        alert('Network error! Please try again later.');
+      }
+    });
+  </script>
 
     </div>
 </div>
@@ -73,5 +100,6 @@
 </body>
 
 </html>
+
 
 
